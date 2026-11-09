@@ -81,15 +81,15 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Direct Verified Contacts */}
           <div className="lg:col-span-5 space-y-6 text-left">
-            <div className="p-8 rounded-xs bg-white border border-[#E8E8EC] space-y-6 shadow-2xs">
+            <div className="p-5 sm:p-8 rounded-xs bg-white border border-[#E8E8EC] space-y-5 sm:space-y-6 shadow-2xs">
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-black font-bold">
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-black font-bold">
                   Direct Verification Details
                 </span>
-                <h3 className="mt-1 text-2xl font-display font-bold text-black tracking-tight">
+                <h3 className="mt-1 text-xl sm:text-2xl font-display font-bold text-black tracking-tight">
                   Contact Information
                 </h3>
-                <p className="mt-2 text-sm text-[#585860] font-sans">
+                <p className="mt-2 text-xs sm:text-sm text-[#585860] font-sans">
                   Feel free to reach out directly via email, phone, or connect on LinkedIn and GitHub.
                 </p>
               </div>
@@ -187,12 +187,12 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Interactive Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-xs bg-white border border-[#E8E8EC] text-left shadow-2xs">
+            <div className="p-5 sm:p-8 rounded-xs bg-white border border-[#E8E8EC] text-left shadow-2xs">
               <div className="pb-4 border-b border-[#E8E8EC]">
-                <h3 className="text-2xl font-display font-bold text-black tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-black tracking-tight">
                   Send a Direct Message
                 </h3>
-                <p className="mt-1 text-sm text-[#585860] font-sans">
+                <p className="mt-1 text-xs sm:text-sm text-[#585860] font-sans">
                   Fill in the details below to dispatch an inquiry directly.
                 </p>
               </div>

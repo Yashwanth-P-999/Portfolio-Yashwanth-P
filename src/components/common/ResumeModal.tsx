@@ -54,8 +54,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Control Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 bg-zinc-50">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-zinc-200 bg-zinc-50">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-xs font-mono uppercase tracking-widest text-zinc-700 font-semibold">
               Curriculum Vitae
             </span>
@@ -68,15 +68,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <button
               onClick={handlePrint}
               aria-label="Print resume"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-zinc-700 hover:text-black bg-white hover:bg-zinc-100 rounded-lg transition-colors border border-zinc-200"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-zinc-700 hover:text-black bg-white hover:bg-zinc-100 rounded-lg transition-colors border border-zinc-200"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Print</span>
+              <span>Print</span>
             </button>
             <button
               onClick={handleDownloadPDF}
               aria-label="Download PDF"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold text-black bg-[#D4FF00] hover:bg-[#c9f500] rounded-lg transition-colors border border-black font-mono shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 text-xs font-bold text-black bg-[#D4FF00] hover:bg-[#c9f500] rounded-lg transition-colors border border-black font-mono shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -92,7 +92,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Structured Resume Content */}
-        <div className="p-6 sm:p-10 max-h-[80vh] overflow-y-auto space-y-8 bg-white text-zinc-800">
+        <div className="p-4 sm:p-10 max-h-[80vh] overflow-y-auto space-y-6 sm:space-y-8 bg-white text-zinc-800">
           {/* Header */}
           <div className="border-b border-zinc-200 pb-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">

@@ -56,31 +56,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         </div>
 
         {/* Massive Wix Studio Typography Headline */}
-        <div className="pt-12 sm:pt-16 pb-12 sm:pb-16 text-left">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[104px] font-display font-extrabold text-black tracking-[-0.04em] leading-[0.94] max-w-5xl">
+        <div className="pt-8 sm:pt-16 pb-8 sm:pb-16 text-left">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-[104px] font-display font-extrabold text-black tracking-[-0.04em] leading-[0.96] max-w-5xl">
             {personalInfo.name}
           </h1>
 
-          <div className="mt-6 sm:mt-8 text-2xl sm:text-3xl md:text-4xl font-display font-semibold text-black tracking-tight max-w-4xl">
+          <div className="mt-4 sm:mt-8 text-lg sm:text-3xl md:text-4xl font-display font-semibold text-black tracking-tight max-w-4xl">
             Computer Science Engineer · Full-Stack Developer &amp; Machine Learning
           </div>
 
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-[#585860] leading-relaxed max-w-3xl font-sans">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-[#585860] leading-relaxed max-w-3xl font-sans">
             {personalInfo.shortBio}
           </p>
 
           {/* Quick Action Badges */}
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-black bg-white border border-black hover:bg-zinc-50 rounded-xs transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 text-xs font-mono font-semibold uppercase tracking-wider text-black bg-white border border-black hover:bg-zinc-50 rounded-xs transition-colors shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download Resume</span>
             </button>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-[#66666E] hover:text-black border border-[#E8E8EC] hover:border-black rounded-xs transition-colors"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 text-xs font-mono font-semibold uppercase tracking-wider text-[#66666E] hover:text-black border border-[#E8E8EC] hover:border-black rounded-xs transition-colors"
             >
               <span>Get in Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -89,25 +89,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         </div>
 
         {/* Iconic Wix Studio High-Voltage Acid Lime Banner */}
-        <div className="mt-4">
+        <div className="mt-2 sm:mt-4">
           <a
             href="#projects"
             onClick={handleScrollToProjects}
-            className="group block w-full bg-[#D4FF00] hover:bg-[#c9f500] border-2 border-black rounded-xs p-6 sm:p-10 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+            className="group block w-full bg-[#D4FF00] hover:bg-[#c9f500] border-2 border-black rounded-xs p-5 sm:p-10 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
           >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="flex items-center justify-between gap-4">
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-black/80 font-bold block mb-1">
+                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-black/80 font-bold block mb-1">
                   Selected Work &amp; Engineering Solutions
                 </span>
-                <span className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-black tracking-tight block">
+                <span className="text-2xl sm:text-5xl md:text-6xl font-display font-black text-black tracking-tight block">
                   Explore Projects
                 </span>
               </div>
 
               {/* High-contrast black circular arrow container like in Wix Studio image */}
-              <div className="w-14 h-14 sm:w-20 sm:h-20 bg-black rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-md">
-                <ArrowDown className="w-6 h-6 sm:w-8 sm:h-8 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+              <div className="w-12 h-12 sm:w-20 sm:h-20 bg-black rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-md">
+                <ArrowDown className="w-5 h-5 sm:w-8 sm:h-8 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
               </div>
             </div>
           </a>

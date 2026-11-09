@@ -94,7 +94,7 @@ export const About: React.FC = () => {
               return (
                 <div
                   key={skill.title}
-                  className="group p-6 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-150 text-left shadow-2xs hover:shadow-sm flex flex-col justify-between"
+                  className="group p-5 sm:p-6 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-150 text-left shadow-2xs hover:shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-[#E8E8EC]">

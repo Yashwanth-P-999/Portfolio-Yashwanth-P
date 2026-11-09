@@ -47,11 +47,11 @@ export const Skills: React.FC = () => {
             </h2>
           </div>
 
-          {/* Interactive filter tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 bg-white p-1 rounded-sm border border-[#E8E8EC] shadow-2xs">
+          {/* Interactive filter tabs - Horizontally scrollable on mobile */}
+          <div className="flex items-center gap-1.5 bg-white p-1.5 rounded-sm border border-[#E8E8EC] shadow-2xs overflow-x-auto max-w-full">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-3 py-1.5 text-xs font-mono tracking-wider uppercase transition-colors rounded-2xs ${
+              className={`px-3 py-1.5 text-xs font-mono tracking-wider uppercase transition-colors rounded-2xs shrink-0 ${
                 activeCategory === 'all'
                   ? 'bg-black text-white font-bold'
                   : 'text-[#66666E] hover:text-black hover:bg-zinc-100 font-medium'
@@ -63,7 +63,7 @@ export const Skills: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-2.5 py-1.5 text-xs font-mono tracking-wider uppercase transition-colors rounded-2xs whitespace-nowrap ${
+                className={`px-2.5 py-1.5 text-xs font-mono tracking-wider uppercase transition-colors rounded-2xs whitespace-nowrap shrink-0 ${
                   activeCategory === cat.id
                     ? 'bg-black text-white font-bold'
                     : 'text-[#66666E] hover:text-black hover:bg-zinc-100 font-medium'
@@ -76,13 +76,13 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Compact, Highly Aesthetic Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {displayedCategories.map((cat, idx) => {
             const IconComp = getCategoryIcon(cat.id);
             return (
               <div
                 key={cat.id}
-                className="group p-6 rounded-xs bg-white border border-[#E8E8EC] hover:border-black transition-all duration-150 shadow-2xs hover:shadow-sm flex flex-col justify-between"
+                className="group p-5 sm:p-6 rounded-xs bg-white border border-[#E8E8EC] hover:border-black transition-all duration-150 shadow-2xs hover:shadow-sm flex flex-col justify-between"
               >
                 <div>
                   {/* Category Header */}
@@ -101,7 +101,7 @@ export const Skills: React.FC = () => {
                   </div>
 
                   {/* Skills Tokens Cloud */}
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
                     {cat.skills.map((skill) => {
                       const isHighlighted = skill.highlight;
                       return (
@@ -110,7 +110,7 @@ export const Skills: React.FC = () => {
                           type="button"
                           onClick={() => setActiveSkillInfo(skill)}
                           onMouseEnter={() => setActiveSkillInfo(skill)}
-                          className={`px-3 py-1.5 rounded-2xs text-xs font-mono transition-all duration-100 border text-left cursor-pointer ${
+                          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-2xs text-xs font-mono transition-all duration-100 border text-left cursor-pointer ${
                             isHighlighted
                               ? 'bg-black text-white border-black hover:bg-[#D4FF00] hover:text-black hover:border-black font-semibold'
                               : 'bg-[#F9F9FB] text-zinc-800 border-[#E8E8EC] hover:border-black hover:bg-white'
@@ -127,7 +127,7 @@ export const Skills: React.FC = () => {
                 <div className="mt-5 pt-3 border-t border-[#F0F0F4] flex items-center justify-between text-[11px] font-mono text-[#8E8E98]">
                   <span>{cat.skills.length} competencies</span>
                   <span className="text-black font-medium group-hover:underline">
-                    Hover for details
+                    Tap for details
                   </span>
                 </div>
               </div>
@@ -135,11 +135,11 @@ export const Skills: React.FC = () => {
           })}
         </div>
 
-        {/* Live Detail Strip when hovering a skill */}
+        {/* Live Detail Strip when hovering/tapping a skill */}
         {activeSkillInfo && (
-          <div className="mt-6 p-4 rounded-xs bg-white border-2 border-black flex items-center justify-between gap-4 animate-in fade-in duration-100 shadow-sm">
-            <div className="flex items-center gap-3">
-              <span className="px-2.5 py-1 rounded-2xs bg-[#D4FF00] text-black font-mono font-bold text-xs uppercase border border-black/30">
+          <div className="mt-6 p-4 rounded-xs bg-white border-2 border-black flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 animate-in fade-in duration-100 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <span className="self-start px-2.5 py-1 rounded-2xs bg-[#D4FF00] text-black font-mono font-bold text-xs uppercase border border-black/30 shrink-0">
                 {activeSkillInfo.name}
               </span>
               <p className="text-xs sm:text-sm text-zinc-800 font-sans">
@@ -148,7 +148,7 @@ export const Skills: React.FC = () => {
             </div>
             <button
               onClick={() => setActiveSkillInfo(null)}
-              className="text-xs font-mono text-zinc-400 hover:text-black shrink-0 px-2 py-1"
+              className="self-end sm:self-center text-xs font-mono text-zinc-400 hover:text-black shrink-0 px-2 py-1"
             >
               ✕
             </button>

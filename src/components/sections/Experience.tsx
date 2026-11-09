@@ -27,20 +27,20 @@ export const ExperienceSection: React.FC = () => {
           {/* Vertical timeline rail */}
           <div className="absolute top-0 bottom-0 left-4 sm:left-8 w-[2px] bg-black pointer-events-none" />
 
-          <div className="space-y-12">
+          <div className="space-y-10 sm:space-y-12">
             {experience.map((item) => (
-              <div key={item.id} className="relative pl-12 sm:pl-20 text-left">
-                {/* Timeline Node Icon with Wix Studio Acid Lime Dot */}
-                <div className="absolute left-1.5 sm:left-5.5 top-1.5 -translate-x-1/2 flex items-center justify-center">
+              <div key={item.id} className="relative pl-9 sm:pl-16 text-left">
+                {/* Timeline Node Icon with Wix Studio Acid Lime Dot - Perfectly Centered */}
+                <div className="absolute left-4 sm:left-8 top-3 -translate-x-1/2 ml-[1px] flex items-center justify-center">
                   <div className="relative flex items-center justify-center">
-                    <span className="w-5 h-5 rounded-full bg-black ring-4 ring-white shadow-xs flex items-center justify-center">
-                      <span className="w-2 h-2 rounded-full bg-[#D4FF00]" />
+                    <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-black ring-4 ring-white shadow-xs flex items-center justify-center">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#D4FF00]" />
                     </span>
                   </div>
                 </div>
 
                 {/* Timeline Card */}
-                <div className="p-6 sm:p-8 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-200 shadow-2xs hover:shadow-sm">
+                <div className="p-5 sm:p-8 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-200 shadow-2xs hover:shadow-sm">
                   {/* Card Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#E8E8EC]">
                     <div>

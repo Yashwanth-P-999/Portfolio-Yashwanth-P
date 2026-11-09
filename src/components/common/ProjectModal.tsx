@@ -31,17 +31,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-project-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/50 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/50 backdrop-blur-xs animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl my-8 bg-white border border-zinc-200 rounded-2xl shadow-2xl overflow-hidden transition-all text-left"
+        className="relative w-full max-w-3xl my-4 sm:my-8 bg-white border border-zinc-200 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden transition-all text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 bg-zinc-50">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-zinc-600 font-semibold">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-zinc-200 bg-zinc-50">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-600 font-semibold">
               {project.category}
             </span>
             {project.status && (
@@ -64,7 +64,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Content */}
-        <div className="p-6 sm:p-8 max-h-[75vh] overflow-y-auto space-y-6">
+        <div className="p-4 sm:p-8 max-h-[75vh] overflow-y-auto space-y-5 sm:space-y-6">
           {/* Header Title */}
           <div>
             <h3

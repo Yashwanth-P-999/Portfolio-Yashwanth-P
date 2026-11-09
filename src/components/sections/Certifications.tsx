@@ -27,7 +27,7 @@ export const CertificationsSection: React.FC = () => {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="group p-6 sm:p-8 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-200 text-left flex flex-col justify-between shadow-2xs hover:shadow-sm"
+              className="group p-5 sm:p-8 rounded-xs bg-[#F9F9FB] border border-[#E8E8EC] hover:border-black transition-all duration-200 text-left flex flex-col justify-between shadow-2xs hover:shadow-sm"
             >
               <div>
                 {/* Header */}

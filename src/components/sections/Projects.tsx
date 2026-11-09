@@ -55,38 +55,59 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     : 'bg-[#F9F9FB] border-[#E8E8EC] hover:border-zinc-400 shadow-2xs'
                 }`}
               >
+                {/* Dedicated Card Top Bar with Status Badge */}
+                <div className="flex items-center justify-between px-4 sm:px-6 py-2.5 bg-white border-b border-[#E8E8EC] text-xs font-mono">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 font-semibold flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                    <span>{isLending ? 'Pipeline Architecture' : 'Application Flow'}</span>
+                  </span>
+
+                  {project.status ? (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F9F9FB] border border-black text-[10px] sm:text-[11px] font-mono text-black font-bold shadow-2xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] border border-black/40 animate-pulse" />
+                      {project.status}
+                    </span>
+                  ) : (
+                    <span className="text-[10px] sm:text-[11px] text-zinc-500 font-mono uppercase tracking-wider">
+                      Architecture
+                    </span>
+                  )}
+                </div>
+
                 {/* Visual Architecture Graphic Area (Wix Studio style light diagram) */}
-                <div className="relative h-48 sm:h-56 bg-[#F0F0F4] border-b border-[#E8E8EC] overflow-hidden flex items-center justify-center p-6">
+                <div className="relative min-h-[175px] sm:min-h-[195px] bg-[#F0F0F4] border-b border-[#E8E8EC] overflow-hidden flex items-center justify-center p-4 sm:p-6">
                   {/* Subtle Grid in background */}
                   <div className="absolute inset-0 bg-wix-dots opacity-60 pointer-events-none" />
 
                   {isLending ? (
                     /* Dynamic Corporate Lending Architecture Diagram */
                     <div className="relative z-10 w-full max-w-md">
-                      <div className="flex items-center justify-between text-[11px] font-mono text-black mb-3">
-                        <span className="flex items-center gap-1.5 font-bold">
-                          <Cpu className="w-3.5 h-3.5" />
-                          <span>OCR Document Ingestion</span>
+                      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-black mb-3 gap-1">
+                        <span className="flex items-center gap-1 font-bold truncate">
+                          <Cpu className="w-3.5 h-3.5 shrink-0 text-black" />
+                          <span className="hidden sm:inline">OCR Document Ingestion</span>
+                          <span className="sm:hidden">OCR Ingest</span>
                         </span>
-                        <span className="text-zinc-400">→</span>
-                        <span className="flex items-center gap-1.5 font-bold">
-                          <Database className="w-3.5 h-3.5" />
-                          <span>SHAP Risk Engine</span>
+                        <span className="text-zinc-400 font-normal shrink-0">→</span>
+                        <span className="flex items-center gap-1 font-bold truncate">
+                          <Database className="w-3.5 h-3.5 shrink-0 text-black" />
+                          <span className="hidden sm:inline">SHAP Risk Engine</span>
+                          <span className="sm:hidden">SHAP Engine</span>
                         </span>
-                        <span className="text-zinc-400">→</span>
-                        <span className="font-bold">FastAPI</span>
+                        <span className="text-zinc-400 font-normal shrink-0">→</span>
+                        <span className="font-bold shrink-0">FastAPI</span>
                       </div>
 
                       {/* Visual Flow Bars */}
-                      <div className="p-3.5 rounded-2xs bg-white border border-[#E8E8EC] space-y-2 shadow-2xs">
-                        <div className="flex justify-between text-[11px] font-mono">
+                      <div className="p-3 sm:p-3.5 rounded-2xs bg-white border border-[#E8E8EC] space-y-2 shadow-2xs">
+                        <div className="flex justify-between text-[10px] sm:text-[11px] font-mono">
                           <span className="text-zinc-600">Balance Sheet Parse</span>
                           <span className="text-black font-bold">99.2% Accuracy</span>
                         </div>
                         <div className="w-full bg-[#E8E8EC] h-1.5 rounded-full overflow-hidden">
                           <div className="bg-black h-full w-[85%] transition-all duration-300 group-hover:w-[94%]" />
                         </div>
-                        <div className="flex justify-between text-[11px] font-mono pt-1">
+                        <div className="flex justify-between text-[10px] sm:text-[11px] font-mono pt-1">
                           <span className="text-zinc-600">SHAP Feature Attribution</span>
                           <span className="text-black font-bold">Explainable AI</span>
                         </div>
@@ -98,75 +119,71 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   ) : (
                     /* Dynamic Expense Tracker Architecture Diagram */
                     <div className="relative z-10 w-full max-w-md">
-                      <div className="flex items-center justify-between text-[11px] font-mono text-black mb-3 font-bold">
-                        <span>React.js Frontend</span>
-                        <span className="text-zinc-400 font-normal">⇄ REST API ⇄</span>
-                        <span>Flask Server</span>
+                      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-black mb-3 font-bold gap-1">
+                        <span className="truncate">
+                          <span className="hidden sm:inline">React.js Frontend</span>
+                          <span className="sm:hidden">React Client</span>
+                        </span>
+                        <span className="text-zinc-400 font-normal shrink-0 text-[9px] sm:text-[10px]">⇄ REST API ⇄</span>
+                        <span className="truncate text-right">
+                          <span className="hidden sm:inline">Flask Server</span>
+                          <span className="sm:hidden">Flask Server</span>
+                        </span>
                       </div>
 
-                      <div className="p-3.5 rounded-2xs bg-white border border-[#E8E8EC] space-y-2.5 shadow-2xs">
+                      <div className="p-3 sm:p-3.5 rounded-2xs bg-white border border-[#E8E8EC] space-y-2.5 shadow-2xs">
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-black font-mono font-bold">Monthly Budget Summary</span>
-                          <span className="text-black font-mono font-bold text-[11px] px-1.5 py-0.5 bg-[#D4FF00] rounded-2xs border border-black/20">
+                          <span className="text-black font-mono font-bold text-[11px] sm:text-xs">Monthly Budget Summary</span>
+                          <span className="text-black font-mono font-bold text-[10px] sm:text-[11px] px-1.5 py-0.5 bg-[#D4FF00] rounded-2xs border border-black/20">
                             Active
                           </span>
                         </div>
-                        <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-mono pt-1">
-                          <div className="p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
-                            <span className="text-zinc-500 block">Category</span>
+                        <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center text-[9px] sm:text-[10px] font-mono pt-1">
+                          <div className="p-1 sm:p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
+                            <span className="text-zinc-500 block text-[8px] sm:text-[10px]">Category</span>
                             <span className="text-black font-bold">Utilities</span>
                           </div>
-                          <div className="p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
-                            <span className="text-zinc-500 block">Status</span>
+                          <div className="p-1 sm:p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
+                            <span className="text-zinc-500 block text-[8px] sm:text-[10px]">Status</span>
                             <span className="text-black font-bold">Balanced</span>
                           </div>
-                          <div className="p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
-                            <span className="text-zinc-500 block">Latency</span>
+                          <div className="p-1 sm:p-1.5 bg-[#F9F9FB] rounded-2xs border border-[#E8E8EC]">
+                            <span className="text-zinc-500 block text-[8px] sm:text-[10px]">Latency</span>
                             <span className="text-black font-bold">&lt; 35ms</span>
                           </div>
                         </div>
                       </div>
                     </div>
                   )}
-
-                  {/* Corner Status indicator */}
-                  <div className="absolute top-3 right-3 flex items-center gap-2">
-                    {project.status && (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-black text-[11px] font-mono text-black font-bold shadow-2xs">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] border border-black/40 animate-pulse" />
-                        {project.status}
-                      </span>
-                    )}
-                  </div>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                <div className="p-5 sm:p-8 flex-1 flex flex-col justify-between space-y-5 sm:space-y-6">
                   <div>
                     {/* Header */}
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start justify-between gap-3 sm:gap-4">
                       <div>
-                        <span className="text-xs font-mono uppercase tracking-wider text-[#66666E] font-medium">
+                        <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#66666E] font-medium">
                           {project.category}
                         </span>
-                        <h3 className="mt-1 text-xl sm:text-2xl font-display font-bold text-black group-hover:text-black transition-colors leading-snug">
+                        <h3 className="mt-1 text-lg sm:text-2xl font-display font-bold text-black group-hover:text-black transition-colors leading-snug">
                           {project.title}
                         </h3>
                       </div>
-                      <div className="w-9 h-9 rounded-full bg-black text-white group-hover:bg-[#D4FF00] group-hover:text-black transition-colors flex items-center justify-center shrink-0">
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black text-white group-hover:bg-[#D4FF00] group-hover:text-black transition-colors flex items-center justify-center shrink-0">
                         <ArrowUpRight className="w-4 h-4" />
                       </div>
                     </div>
 
                     {/* Short Description */}
-                    <p className="mt-3 text-sm text-[#585860] leading-relaxed font-sans">
+                    <p className="mt-3 text-xs sm:text-sm text-[#585860] leading-relaxed font-sans">
                       {project.shortDescription}
                     </p>
 
                     {/* Features list */}
                     <ul className="mt-4 space-y-2">
                       {project.keyFeatures.slice(0, 3).map((feat, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-800">
+                        <li key={idx} className="flex items-start gap-2 text-xs text-zinc-800">
                           <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0 mt-0.5" />
                           <span className="leading-relaxed font-sans">{feat}</span>
                         </li>
@@ -187,8 +204,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                       ))}
                     </div>
 
-                    <div className="mt-4 flex items-center justify-between">
-                      <span className="text-xs text-zinc-500 font-mono">
+                    <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <span className="text-[11px] text-zinc-500 font-mono">
                         Click card for complete architecture
                       </span>
                       <span className="text-xs font-mono font-bold text-black uppercase group-hover:underline">
